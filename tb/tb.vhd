@@ -32,6 +32,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity tb is
+--  Port ( );
 end tb;
 
 architecture Behavioral of tb is
@@ -39,24 +40,27 @@ architecture Behavioral of tb is
     signal b : std_logic_vector ( 7 downto 0);
     signal sum : std_logic_vector ( 7 downto 0);
     signal cout : std_logic;
-
+    
     component cla8
     Port ( a : in STD_LOGIC_VECTOR (7 downto 0);
-            b : in STD_LOGIC_VECTOR (7 downto 0);
-            cin : in std_logic;
-            sum : out STD_LOGIC_VECTOR (7 downto 0);
-            cout : out STD_LOGIC);
-    end component;
-
-    component rca8
-        Port ( a : in STD_LOGIC_VECTOR (7 downto 0);
-            b : in STD_LOGIC_VECTOR (7 downto 0);
-            sum : out STD_LOGIC_VECTOR (7 downto 0);
-            cout : out STD_LOGIC);
-    end component ;
+           b : in STD_LOGIC_VECTOR (7 downto 0);
+           cin : in std_logic;
+           sum : out STD_LOGIC_VECTOR (7 downto 0);
+           cout : out STD_LOGIC);
+           
+   end component;
+   
+   component rca8
+    Port ( a : in STD_LOGIC_VECTOR (7 downto 0);
+           b : in STD_LOGIC_VECTOR (7 downto 0);
+           sum : out STD_LOGIC_VECTOR (7 downto 0);
+           cout : out STD_LOGIC);
+           
+   end component ;
+           
+   
 --   signal match : std_logic;
 --   signal exp : std_logic_vector ( 7 downto 0);
-    begin
 
     dut : cla8
     port map(
@@ -65,40 +69,40 @@ architecture Behavioral of tb is
     cin => '0',
     sum => sum,
     cout => cout);
-
+    
     process begin
-
+    
 --    exp <= a + b;
 --    match <= exp == sum;
-
+    
     a <= "00000110";
     b <= "00010101";
-
+    
     wait for 100ns;
 
     a <= "00000111";
     b <= "00100011";
-
+    
     wait for 100ns;
-
+    
     a <= "00000100";
     b <= "00000011";
-
+    
     wait for 100ns;
-
+    
     a <= "10000100";
     b <= "10000011";
-
+    
     wait for 100ns;
-
+    
     a <= "01000100";
     b <= "00100011";
-
+    
     wait for 100ns;
-
+    
     a <= "00000000";
     b <= "00000000";
-
+    
     wait;
     end process;
 

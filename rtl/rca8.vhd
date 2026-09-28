@@ -2,9 +2,9 @@
 -- Company: 
 -- Engineer: 
 -- 
--- Create Date: 08/13/2026 04:51:52 PM
+-- Create Date: 08/06/2026 04:22:11 PM
 -- Design Name: 
--- Module Name: cla8 - Behavioral
+-- Module Name: rca8 - Behavioral
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
@@ -31,19 +31,20 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity cla8 is
+entity rca8 is
     Port ( a : in STD_LOGIC_VECTOR (7 downto 0);
            b : in STD_LOGIC_VECTOR (7 downto 0);
-           cin : in STD_LOGIC;
            sum : out STD_LOGIC_VECTOR (7 downto 0);
            cout : out STD_LOGIC);
-end cla8;
+end rca8;
 
-architecture Behavioral of cla8 is
-    signal g : std_logic_vector (7 downto 0);
-    signal p : std_logic_vector (7 downto 0);
-    signal c : std_logic_vector (7 downto 0);
-    
+architecture Behavioral of rca8 is
+    component ha
+    Port ( a : in STD_LOGIC;
+           b : in STD_LOGIC;
+           sum : out STD_LOGIC;
+           carry : out STD_LOGIC);
+    end component;
     component fa
     Port ( a : in STD_LOGIC;
            b : in STD_LOGIC;
@@ -51,20 +52,15 @@ architecture Behavioral of cla8 is
            sum : out STD_LOGIC;
            cout : out STD_LOGIC);
     end component;
+    signal c : std_logic_vector (6 downto 0);
 begin
+    ha1 : ha port map(a => a(0),b => b(0),sum => sum(0),carry => c(0));
+    fa1 : fa port map(a => a(1),b => b(1),cin => c(0),sum => sum(1),cout => c(1));
+    fa2 : fa port map(a => a(2),b => b(2),cin => c(1),sum => sum(2),cout => c(2));
+    fa3 : fa port map(a => a(3),b => b(3),cin => c(2),sum => sum(3),cout => c(3));
+    fa4 : fa port map(a => a(4),b => b(4),cin => c(3),sum => sum(4),cout => c(4));
+    fa5 : fa port map(a => a(5),b => b(5),cin => c(4),sum => sum(5),cout => c(5));
+    fa6 : fa port map(a => a(6),b => b(6),cin => c(5),sum => sum(6),cout => c(6));
+    fa7 : fa port map(a => a(7),b => b(7),cin => c(6),sum => sum(7),cout => cout);
 
-    g <= a and b;
-    p <= a xor b;
-    
-    c(0) <= cin;
-    c(1) <= (g(0) or (p(0) and c(0)));
-    c(2) <= (g(1) or (p(1) and (g(0) or (p(0) and c(0)))));
-    c(3) <= (g(2) or (p(2) and (g(1) or (p(1) and (g(0) or (p(0) and c(0)))))));
-    c(4) <= (g(3) or (p(3) and (g(2) or (p(2) and (g(1) or (p(1) and (g(0) or (p(0) and c(0)))))))));
-    c(5) <= (g(4) or (p(4) and (g(3) or (p(3) and (g(2) or (p(2) and (g(1) or (p(1) and (g(0) or (p(0) and c(0)))))))))));
-    c(6) <= (g(5) or (p(5) and (g(4) or (p(4) and (g(3) or (p(3) and (g(2) or (p(2) and (g(1) or (p(1) and (g(0) or (p(0) and c(0)))))))))))));
-    c(7) <= g(6) or (p(6) and (g(5) or (p(5) and (g(4) or (p(4) and (g(3) or (p(3) and (g(2) or (p(2) and (g(1) or (p(1) and (g(0) or (p(0) and c(0))))))))))))));
-    
-    sum <= a xor b xor c;
-    
 end Behavioral;
