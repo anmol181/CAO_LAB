@@ -57,6 +57,8 @@ architecture Behavioral of tb is
            cout : out STD_LOGIC);
            
    end component ;
+   
+   begin
            
    
 --   signal match : std_logic;
