@@ -33,49 +33,51 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity alu_8bit is
     Port ( a : in signed (7 downto 0);
-           b : in signed (7 downto 0);
-           opcode : in std_logic_vector (3 downto 0);
-           v : out std_logic;
-           op : out signed (15 downto 0));
+            b : in signed (7 downto 0);
+            opcode : in std_logic_vector (3 downto 0);
+            v : out std_logic;
+            op : out signed (15 downto 0));
 end alu_8bit;
 
 architecture Behavioral of alu_8bit is
 
 begin
 
-    process(a,b,opcode) 
+    process(a,b,opcode)
         variable ae : signed( 15 downto 0);
         variable be : signed( 15 downto 0);
         variable temp : signed (15 downto 0);
     begin
-    
+
         ae := TO_SIGNED (TO_INTEGER (a),16);
         be := TO_SIGNED (TO_INTEGER (b),16);
-        
+
         case(opcode) is
-        
-        when "0000" => 
+
+        when "0000" =>
             temp := ae + be;
-        when "0001" => 
+        when "0001" =>
             temp := ae - be;
-        when "0010" => 
+        when "0010" =>
             temp := a*b;
         when "0011" =>
-            if b=0 then 
+            if b=0 then
                 temp := x"ffff";
                 v <= '1';
             else
-                temp := a/b;
+                temp := ae/be;
             end if;
-        when "0100" => 
+        when "0100" =>
             temp := ae mod be;
-        when "0101" => 
+        when "0101" =>
             temp := ae rem be;
         when "0110" =>
             temp := not ae;
+            temp := temp and x"00ff";
         when "0111" =>
             temp := ae and be;
-        when "1000" => 
+            temp := temp and x"00ff";
+        when "1000" =>
             temp := ae xor be;
         when "1001" =>
             temp := ae srl to_integer(be);
@@ -86,27 +88,27 @@ begin
         when "1100" =>
             temp := ae rol 1;
         when "1101" =>
-            if( a >= 32 ) then 
+            if( a >= 32 ) then
                 temp := x"ffff";
                 v <= '1';
-            elsif (a < 32 ) then 
+            elsif (a < 32 ) then
                 temp := x"ffff";
                 v <= '1';
-            else 
+            else
                 temp := ae*ae*ae;
             end if;
         when "1110" =>
-            temp := (ae*ae) - (b/2);
+            temp := (a*a) - (be/2);
         when "1111" =>
-            temp := (be*be) - ( b mod a);
+            temp := (b*b) - ( be mod ae);
         when others =>
             temp := x"0000";
             v <= '0';
-        
+
         end case;
         op <= temp;
-            
-    end process;    
+
+    end process;
 
 
 end Behavioral;
