@@ -20,13 +20,15 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module alu_8bit_v(
-    input a,
-    input b,
-    input opcode,
-    output reg out,
-    output reg cf,
-    output reg vf
+module alu_8bit_v #(
+    parameter N = 8
+)(
+    input wire  [N-1:0] a,
+    input wire  [N-1:0] b,
+    input [3:0] opcode,
+    output reg  [(2*N)-1:0] out,
+    output wire cf,
+    output reg  vf
     );
     
 //    localparam zero = 0;
@@ -38,65 +40,75 @@ module alu_8bit_v(
 //    localparam six = 6;
 //    localparam seven = 7;
     always @(*) begin
+        vf <= 0;
         case(opcode)
+        0 : begin
+            out <= a + b;
+        end
         1 : begin
-            {cf,out} <= a + b;
+            out <= a - b;
         end
         2 : begin
-            {cf,out} <= a - b;
+            out <= a * b;
         end
         3 : begin
-            {cf,out} <= a * b;
-        end
-        4 : begin
             if(b == 0) begin
-                out <= 8'hff;
+                out <= {N{1'b1}};
                 vf <= 1;
             end
             else begin
                 out <= a/b;
             end
         end  
-        5 : begin
+        4 : begin
             out <= ((a % b) + b) % b;
         end  
-        6 : begin
+        5 : begin
             out <= a % b;
         end  
-        7 : begin
+        6 : begin
             out <= ~a;
         end
-        8 : begin
+        7 : begin
             out <= a & b;
         end 
+        8 : begin
+            out <= a ^ b;
+        end  
         9 : begin
-            
+            out <= a >> b;
         end  
-        4 : begin
-        
-        end  
-        4 : begin
-        
+        10 : begin
+            out <= a << b;
         end
-        4 : begin
-        
+        11 : begin
+            out <= {a[0],a[N-1:1]};
         end 
-        4 : begin
-        
+        12 : begin
+            out <= {a[N-2:0],a[N-1]};
         end  
-        4 : begin
-        
+        13 : begin
+            if ( a >= 32 ) begin
+                out <= {N{1'b1}};
+                vf <= 1;
+            end else if( a < -32 ) begin
+                out <= {N{1'b1}};
+                vf <= 1;
+            end else begin
+                out <= a*a*a;
+            end
         end  
-        4 : begin
-        
+        14 : begin
+            out <= a*a - b/2;
         end
-        4 : begin
-        
+        15 : begin
+            out <= b*b - (a%b);
         end
         default : begin
-        
+            out <= {N{1'b0}};
         end
         
         endcase
     end
+    assign cf = (opcode == 0 || opcode == 1) && out[N];
 endmodule

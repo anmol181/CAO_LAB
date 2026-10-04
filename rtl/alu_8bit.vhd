@@ -89,7 +89,7 @@ begin
             if( a >= 32 ) then 
                 temp := x"ffff";
                 v <= '1';
-            elsif (a < 32 ) then 
+            elsif (a < -32 ) then 
                 temp := x"ffff";
                 v <= '1';
             else 
