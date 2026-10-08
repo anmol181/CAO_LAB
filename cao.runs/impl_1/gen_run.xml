@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1791457701">
+  <File Type="ROUTE-RQS-RPT" Name="route_report_qor_suggestions_0.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-RQS" Name="rcanbit_postroute_physopted.rqs"/>
+  <File Type="ROUTE-RQS" Name="rcanbit_routed.rqs"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <File Type="BG-BGN" Name="rcanbit.bgn"/>
+  <File Type="BITSTR-SYSDEF" Name="rcanbit.sysdef"/>
+  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
+  <File Type="BITSTR-LTX" Name="rcanbit.ltx"/>
+  <File Type="RBD_FILE" Name="rcanbit.rbd"/>
+  <File Type="NPI_FILE" Name="rcanbit.npi"/>
+  <File Type="RNPI_FILE" Name="rcanbit.rnpi"/>
+  <File Type="CFI_FILE" Name="rcanbit.cfi"/>
+  <File Type="RCFI_FILE" Name="rcanbit.rcfi"/>
+  <File Type="PL-PDI-FILE" Name="rcanbit_pld.pdi"/>
+  <File Type="BOOT-PDI-FILE" Name="rcanbit_boot.pdi"/>
+  <File Type="RDI-RDI" Name="rcanbit.vdi"/>
+  <File Type="PDI-FILE" Name="rcanbit.pdi"/>
+  <File Type="BITSTR-MMI" Name="rcanbit.mmi"/>
+  <File Type="BITSTR-BMM" Name="rcanbit_bd.bmm"/>
+  <File Type="BITSTR-NKY" Name="rcanbit.nky"/>
+  <File Type="BITSTR-RBT" Name="rcanbit.rbt"/>
+  <File Type="BITSTR-MSK" Name="rcanbit.msk"/>
+  <File Type="BG-BIN" Name="rcanbit.bin"/>
+  <File Type="POSTROUTE-PHYSOPT-RQS-RPT" Name="postroute_physopt_report_qor_suggestions_0.rpt"/>
+  <File Type="BG-BIT" Name="rcanbit.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="alu_8bit_bus_skew_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="alu_8bit_bus_skew_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="alu_8bit_bus_skew_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="alu_8bit_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="alu_8bit_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="alu_8bit_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="rcanbit_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="rcanbit_postroute_physopt.dcp"/>
+  <File Type="BG-DRC" Name="rcanbit.drc"/>
+  <File Type="ROUTE-RQS-PB" Name="rcanbit_rqs_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="rcanbit_bus_skew_routed.rpx"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="rcanbit_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW" Name="rcanbit_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="rcanbit_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-SIMILARITY" Name="rcanbit_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-TIMING-RPX" Name="rcanbit_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-TIMING-PB" Name="rcanbit_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="rcanbit_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="rcanbit_route_status.pb"/>
+  <File Type="ROUTE-STATUS" Name="rcanbit_route_status.rpt"/>
+  <File Type="ROUTE-PWR-RPX" Name="rcanbit_power_routed.rpx"/>
+  <File Type="ROUTE-PWR-SUM" Name="rcanbit_power_summary_routed.pb"/>
+  <File Type="ROUTE-PWR" Name="rcanbit_power_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="rcanbit_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="rcanbit_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="rcanbit_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-RPX" Name="rcanbit_drc_routed.rpx"/>
+  <File Type="ROUTE-DRC-PB" Name="rcanbit_drc_routed.pb"/>
+  <File Type="ROUTE-DRC" Name="rcanbit_drc_routed.rpt"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="rcanbit_routed_bb.dcp"/>
+  <File Type="ROUTE-DCP" Name="rcanbit_routed.dcp"/>
+  <File Type="ROUTE-ERROR-DCP" Name="rcanbit_routed_error.dcp"/>
+  <File Type="PHYSOPT-TIMING" Name="rcanbit_timing_summary_physopted.rpt"/>
+  <File Type="PHYSOPT-DRC" Name="rcanbit_drc_physopted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="rcanbit_physopt.dcp"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="rcanbit_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="rcanbit_postplace_pwropt.dcp"/>
+  <File Type="PLACE-RQA-PB" Name="rcanbit_rqa_placed.pb"/>
+  <File Type="PLACE-TIMING" Name="rcanbit_timing_summary_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="rcanbit_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="rcanbit_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-CTRL" Name="rcanbit_control_sets_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="rcanbit_utilization_placed.pb"/>
+  <File Type="PLACE-UTIL" Name="rcanbit_utilization_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="rcanbit_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-IO" Name="rcanbit_io_placed.rpt"/>
+  <File Type="PLACE-DCP" Name="rcanbit_placed.dcp"/>
+  <File Type="PWROPT-TIMING" Name="rcanbit_timing_summary_pwropted.rpt"/>
+  <File Type="PWROPT-DRC" Name="rcanbit_drc_pwropted.rpt"/>
+  <File Type="PWROPT-DCP" Name="rcanbit_pwropt.dcp"/>
+  <File Type="OPT-RQA-PB" Name="rcanbit_rqa_opted.pb"/>
+  <File Type="OPT-HWDEF" Name="rcanbit.hwdef"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="rcanbit_methodology_drc_opted.rpt"/>
+  <File Type="OPT-DRC" Name="rcanbit_drc_opted.rpt"/>
+  <File Type="OPT-DCP" Name="rcanbit_opt.dcp"/>
+  <File Type="OPT-TIMING" Name="rcanbit_timing_summary_opted.rpt"/>
+  <File Type="REPORTS-TCL" Name="rcanbit_reports.tcl"/>
+  <File Type="INIT-TIMING" Name="rcanbit_timing_summary_init.rpt"/>
+  <File Type="PA-TCL" Name="rcanbit.tcl"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PPRDIR/rtl/fa.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/rtl/rcanbit.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/rtl/alu_8bit_v.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/rtl/alu_8bit.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/rtl/fa.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/rtl/ha.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/rtl/rca8.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/rtl/cla8.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/rtl/booth_mul.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/rtl/lab2_wallace_tree_mul.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="rcanbit"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/new/basys3_cons.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1" RelGenDir="$PGENDIR/utils_1">
+    <Filter Type="Utils"/>
+    <File Path="$PSRCDIR/utils_1/imports/synth_1/rcanbit.dcp">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedInSteps" Val="synth_1"/>
+        <Attr Name="AutoDcp" Val="1"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2023">
+      <Desc>Default settings for Implementation.</Desc>
+    </StratHandle>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+  </Strategy>
+</GenRun>
