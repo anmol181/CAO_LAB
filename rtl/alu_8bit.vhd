@@ -48,6 +48,7 @@ begin
         variable be : signed( 15 downto 0);
         variable temp : signed (15 downto 0);
     begin
+        v <= '0';
 
         ae := TO_SIGNED (TO_INTEGER (a),16);
         be := TO_SIGNED (TO_INTEGER (b),16);
@@ -66,6 +67,7 @@ begin
                 v <= '1';
             else
                 temp := ae/be;
+                v <= '0';
             end if;
         when "0100" =>
             temp := ae mod be;
@@ -96,6 +98,7 @@ begin
                 v <= '1';
             else
                 temp := ae*ae*ae;
+                v <= '0';
             end if;
         when "1110" =>
             temp := (a*a) - (be/2);

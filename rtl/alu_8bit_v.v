@@ -20,13 +20,13 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module alu_8bit_v #(
+module alu_8bit #(
     parameter N = 8
 )(
-    input wire  [N-1:0] a,
-    input wire  [N-1:0] b,
+    input wire  signed [N-1:0] a,
+    input wire  signed [N-1:0] b,
     input [3:0] opcode,
-    output reg  [(2*N)-1:0] out,
+    output reg  signed [(2*N)-1:0] out,
     output wire cf,
     output reg  vf
     );
@@ -53,51 +53,51 @@ module alu_8bit_v #(
         end
         3 : begin
             if(b == 0) begin
-                out <= {N{1'b1}};
+                out <= {(2*N){1'b1}};
                 vf <= 1;
             end
             else begin
                 out <= a/b;
             end
-        end  
+        end
         4 : begin
             out <= ((a % b) + b) % b;
-        end  
+        end
         5 : begin
             out <= a % b;
-        end  
+        end
         6 : begin
             out <= ~a;
         end
         7 : begin
             out <= a & b;
-        end 
+        end
         8 : begin
             out <= a ^ b;
-        end  
+        end
         9 : begin
             out <= a >> b;
-        end  
+        end
         10 : begin
             out <= a << b;
         end
         11 : begin
             out <= {a[0],a[N-1:1]};
-        end 
+        end
         12 : begin
             out <= {a[N-2:0],a[N-1]};
-        end  
+        end
         13 : begin
             if ( a >= 32 ) begin
-                out <= {N{1'b1}};
+                out <= {(2*N){1'b1}};
                 vf <= 1;
             end else if( a < -32 ) begin
-                out <= {N{1'b1}};
+                out <= {(2*N){1'b1}};
                 vf <= 1;
             end else begin
                 out <= a*a*a;
             end
-        end  
+        end
         14 : begin
             out <= a*a - b/2;
         end
@@ -105,7 +105,7 @@ module alu_8bit_v #(
             out <= b*b - (a%b);
         end
         default : begin
-            out <= {N{1'b0}};
+            out <= {(2*N){1'b0}};
         end
         
         endcase

@@ -18,19 +18,6 @@
 -- 
 ----------------------------------------------------------------------------------
 
-
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
-
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
-use IEEE.NUMERIC_STD.ALL;
-
--- Uncomment the following library declaration if instantiating
--- any Xilinx leaf cells in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
-
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
@@ -77,9 +64,6 @@ begin
     -- Stimulus process
     stim_proc: process
     begin
-        -- Initialize v signal state (due to latched behavior in source)
-        v <= '0';
-        
         -- Test 0000: Addition
         a <= to_signed(15, 8);
         b <= to_signed(10, 8);

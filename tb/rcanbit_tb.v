@@ -42,8 +42,7 @@ rcanbit rca0 (
 integer i,j,k;
 
 initial begin
-    
-    
+
     for (i = 0;i < 2**N;i = i + 1) begin
         for (j = 0;j < 2**N;j = j + 1) begin
             for (k = 0;k < 2;k = k + 1) begin 
