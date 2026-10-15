@@ -46,3 +46,6 @@ module rcanbit#(
     assign cout = c[N-1];
 
 endmodule
+
+// 1110 to select msb 7seg
+// 7segment is active low
