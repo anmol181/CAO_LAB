@@ -1,49 +1,137 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 10/22/2026 05:31:50 PM
-// Design Name: 
-// Module Name: hardwire_cu_tb
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
 
+module hardwired_cu_tb();
 
-module hardwired_cu_tb( );
+    reg clk;
+    reg rst;
+    reg [3:0] ir_out;
+    reg mfc;
 
-reg [3:0] ir_out;
-reg mfc;
-reg clk;
-reg rst;
+    wire pc_in;
+    wire pc_out;
+    wire pc_inc;
+    wire mar_in;
+    wire mdr_ine;
+    wire mdr_out;
+    wire ir_in;
+    wire aout;
+    wire bout;
+    wire yin;
+    wire [3:0] opcode;
+    wire End_flag; 
 
-dut hardwired_cu(
-    .clk(clk),
-    .rst(rst),
-    .ir_out(ir_out),
-    .pc_in(pc_in),
-    .pc_out(pc_out),
-    .pc_inc(pc_inc),
-    .mar_in(
+    hardwired_cu dut (
+        .clk(clk),
+        .rst(rst),
+        .ir_out(ir_out),
+        .mfc(mfc),
+        .pc_in(pc_in),
+        .pc_out(pc_out),
+        .pc_inc(pc_inc),
+        .mar_in(mar_in),
+        .mdr_ine(mdr_ine),
+        .mdr_out(mdr_out),
+        .ir_in(ir_in),
+        .aout(aout),
+        .bout(bout),
+        .yin(yin),
+        .opcode(opcode),
+        .End(End_flag) 
+    );
 
-initial begin
+    initial begin
+        clk = 0;
+        forever #5 clk = ~clk; 
+    end
 
-    clk = 0;
-    forever #5 clk = ~clk;
+    initial begin
+        rst = 1;
+        ir_out = 4'b0000;
+        mfc = 0;
 
-end
+        #20;
+        rst = 0;
 
-initial begin
+        #15;              
+        ir_out = 4'b1010; 
+        mfc = 1;          
+        #10;
+        mfc = 0;
+        #30;              
 
-end
+        ir_out = 4'b0101;
+        #40;              
+        mfc = 1;          
+        #10;
+        mfc = 0;
+        #30;
+
+        ir_out = 4'b1111;
+        #15;              
+        mfc = 1;          
+        #5;               
+        rst = 1;          
+        #10;
+        rst = 0;          
+        mfc = 0;
+        #15;              
+
+        ir_out = 4'b0011;
+        mfc = 1;
+        #10;
+        mfc = 0;
+        #30;
+
+        ir_out = 4'b1001;
+        #100;             
+        mfc = 1;
+        #10;
+        mfc = 0;
+        #30;              
+
+        ir_out = 4'b0110;
+        #10;              
+        mfc = 1;
+        #10;              
+        rst = 1;          
+        #10;
+        rst = 0;          
+        mfc = 0;
+        #10;
+
+        ir_out = 4'b1100;
+        #10;              
+        mfc = 1;
+        #10;              
+        mfc = 0;
+        #10;              
+        rst = 1;          
+        #10;
+        rst = 0;
+
+        ir_out = 4'b1000;
+        mfc = 1;          
+        #40;              
+        mfc = 0;
+
+        #10;
+        ir_out = 4'b0000; 
+        #10;              
+        mfc = 1;
+        #10;
+        mfc = 0;
+        #30;
+
+        ir_out = 4'b0001; #10; mfc = 1; #10; mfc = 0; #30;
+        ir_out = 4'b0010; #10; mfc = 1; #10; mfc = 0; #30;
+        ir_out = 4'b0100; #10; mfc = 1; #10; mfc = 0; #30;
+        ir_out = 4'b0111; #10; mfc = 1; #10; mfc = 0; #30;
+        ir_out = 4'b1011; #10; mfc = 1; #10; mfc = 0; #30;
+        ir_out = 4'b1101; #10; mfc = 1; #10; mfc = 0; #30;
+        ir_out = 4'b1110; #10; mfc = 1; #10; mfc = 0; #30;
+
+        #40;
+        $finish;
+    end
+
 endmodule

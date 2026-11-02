@@ -71,6 +71,18 @@ module hardwired_cu(
     end
     
     always @(*) begin
+        pc_out = 0;
+        mar_in = 0;
+        pc_inc = 0;
+        mdr_ine = 0;
+        pc_in = 0;
+        mdr_out = 0;
+        ir_in = 0;
+        aout = 0;
+        bout = 0;
+        opcode = 0;
+        yin = 0;
+        End = 0;
         case(state)
         st0 : begin
             pc_out = 1;
