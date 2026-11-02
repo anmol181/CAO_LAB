@@ -38,13 +38,13 @@ module hardwired_cu(
     output reg [3:0] opcode,
     output reg End
     );
-    
+
     reg [1:0] state;
     parameter st0 = 0;
     parameter st1 = 1;
     parameter st2 = 2;
     parameter st3 = 3;
-    
+
     always @(posedge clk) begin
         if(rst) begin
             state <= st0;
@@ -69,8 +69,20 @@ module hardwired_cu(
             endcase
         end
     end
-    
+
     always @(*) begin
+        pc_out = 0;
+        mar_in = 0;
+        pc_inc = 0;
+        mdr_ine = 0;
+        pc_in = 0;
+        mdr_out = 0;
+        ir_in = 0;
+        aout = 0;
+        bout = 0;
+        opcode = 0;
+        yin = 0;
+        End = 0;
         case(state)
         st0 : begin
             pc_out = 1;
